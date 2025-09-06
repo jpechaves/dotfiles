@@ -105,4 +105,37 @@ set tw=256
 
 set ai "Auto indent
 set si "Smart indent
+set copyindent "Copy previous indentation level
 set wrap "Wrap lines
+
+" Display spaces
+set list
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+""""""""""""""""""""""""""""""""""""
+" => Plugins
+""""""""""""""""""""""""""""""""""""
+" ==> vim-plug
+let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+if empty(glob(data_dir . '/autoload/plug.vim'))
+  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin()
+  Plug 'preservim/nerdtree'
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
+call plug#end()
+
+""""""""""""""""""""""""""""""""""""
+" => Hotkeys
+""""""""""""""""""""""""""""""""""""
+" NERDTree stuff
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+
+" Quickly edit/reload vimrc file
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
