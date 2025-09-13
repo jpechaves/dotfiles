@@ -1,0 +1,23 @@
+{
+  // Theme config
+  //
+  "theme": "auto",
+  // General editor config
+  //
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "rulers": [80],
+  "draw_white_space": ["all"],
+  // Line and space stuff
+  //
+  "trim_trailing_white_space_on_save": "all",
+  "ensure_newline_at_eof_on_save": true,
+  "save_on_focus_lost": true,
+  // ?
+  "index_files": true,
+  "ignored_packages":
+  [
+    "Vintage",
+  ],
+  "console_max_history_lines": 3000,
+}

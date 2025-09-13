@@ -1,0 +1,34 @@
+{
+  "lsp_format_on_save": true,
+  "clients":{
+    "ruby-lsp":{
+      "enabled":true,
+      "command":[
+        "ruby-lsp"
+      ],
+      "selector":"source.ruby | text.html.ruby",
+      "initializationOptions":{
+        "enabledFeatures":{
+          "diagnostics":true,
+        },
+        "experimentalFeaturesEnabled":true,
+      },
+    },
+    "ruby": {
+      "enabled": true,
+      "command": ["standardrb", "--lsp"],
+      "selector": "source.ruby | text.html.ruby | source.ruby.rails",
+      "initializationOptions": {
+        "diagnostics": true
+      },
+      "formatter": {
+        "standardrb": {
+          "command": "standardrb",
+          "arguments": [
+            "--fix"
+          ]
+        }
+      }
+    },
+  },
+}
